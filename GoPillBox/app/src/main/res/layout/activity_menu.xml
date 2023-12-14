@@ -7,7 +7,7 @@
     android:id="@+id/textview_pillbox"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/verdeFuerte"
+    android:background="@drawable/bg_color"
     tools:context=".activity_menu">
 
     <TextView
