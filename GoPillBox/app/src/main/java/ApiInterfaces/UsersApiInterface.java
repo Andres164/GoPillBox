@@ -11,7 +11,7 @@ public interface UsersApiInterface {
     Call<User> getUsers();
 
     @POST("Users")
-    Call<User> createUser(@Body UserView user);
+    Call<User> createUser(@Body User user);
 
     @GET("Users/{id}")
     Call<User> getUserById(@Path("id") int userId);
