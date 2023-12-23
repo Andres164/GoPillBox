@@ -1,13 +1,14 @@
 package com.example.gopillbox;
 
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.gopillbox.R;
-
 import ApiInterfaces.RetrofitClient;
 import ApiInterfaces.UsersApiInterface;
 import Models.User;
@@ -61,16 +62,44 @@ public class activity_registro extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User registeredUser = response.body();
+                    // Save the registered user object in local storage
+                    saveUserLocally(registeredUser);
                     // Handle the registered user object
                 } else {
                     // Handle API error
+                    showErrorMessage("API Error: " + response.code());
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
                 // Handle failure
+                showErrorMessage("Network Failure: " + t.getMessage());
             }
         });
+    }
+
+    private void showErrorMessage(String message) {
+        // Display an AlertDialog with the error message
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setTitle("Error")
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // Do nothing, or handle the click event
+                    }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void saveUserLocally(User user) {
+        // Save the user details in SharedPreferences
+        SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("userId", String.valueOf(user.getUserId()));
+        editor.putString("userName", user.getUserName());
+        // Add more user details as needed
+        editor.apply();
     }
 }
