@@ -7,26 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".activity_registro">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="362dp"
-        android:layout_height="199dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/drug_store_template_hand_drawn_cartoon_flat_illustration_shop_for_the_sale_of_drugs_a_pharmacist_medicine_capsules_and_bottle_vector" />
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="63dp"
         android:layout_height="29dp"
         android:layout_marginStart="76dp"
-        android:layout_marginTop="32dp"
         android:text="Correo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/editTextEmail"
@@ -74,4 +62,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
         app:layout_constraintVertical_bias="0.245" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="191dp"
+        android:layout_height="249dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/login" />
 </androidx.constraintlayout.widget.ConstraintLayout>

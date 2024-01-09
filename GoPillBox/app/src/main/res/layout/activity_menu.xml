@@ -50,7 +50,7 @@
         android:id="@+id/textView_receta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Recetas y Tratamientos"
         android:textColor="#080C0C"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -61,7 +61,7 @@
         tools:text="Recetas y Tratamientos" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton3"
+        android:id="@+id/Button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"

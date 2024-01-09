@@ -2,6 +2,7 @@ package com.example.gopillbox;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ShareCompat;
+
 import ApiInterfaces.RetrofitClient;
 import ApiInterfaces.UsersApiInterface;
 import Models.User;
@@ -36,10 +39,14 @@ public class activity_registro extends AppCompatActivity {
         btnRegistrarse = findViewById(R.id.btn_registrarse);
 
         // Set OnClickListener for the "Registrarse" button
+        Button Registrarse = findViewById(R.id.btn_registrarse);
         btnRegistrarse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Handle the click event
+                //abrir el menu de la aplicacion
+                Intent intent = new Intent(activity_registro.this, activity_menu.class);
+                startActivity(intent);
                 registerUser();
             }
         });
@@ -103,3 +110,5 @@ public class activity_registro extends AppCompatActivity {
         editor.apply();
     }
 }
+
+

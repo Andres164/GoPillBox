@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class activity_alta_medicamento_pagina2 extends AppCompatActivity {
+public class Activity_pantalla_alarma extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_alta_medicamento_pagina2);
+        setContentView(R.layout.activity_pantalla_alarma);
     }
 }
