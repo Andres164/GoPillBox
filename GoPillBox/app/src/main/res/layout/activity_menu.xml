@@ -35,16 +35,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <RelativeLayout
-        android:id="@+id/RelativeLayout_recetas"
-        android:layout_width="423dp"
-        android:layout_height="452dp"
-        android:background="#CCDCBA"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchView_Menu"
-        app:layout_constraintVertical_bias="0.385" />
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"/>
+
 
     <TextView
         android:id="@+id/textView_receta"
@@ -54,7 +50,6 @@
         android:textColor="#080C0C"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/RelativeLayout_recetas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchView_Menu"
@@ -64,13 +59,40 @@
         android:id="@+id/Button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:clickable="true"
         app:backgroundTint="#377139"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/RelativeLayout_recetas"
         app:srcCompat="@android:drawable/ic_input_add" />
+
+    <TableLayout
+        android:id="@+id/TableMedicamentos"
+        android:layout_width="370dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/Button_add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_receta"
+        app:layout_constraintVertical_bias="0.045">
+
+        <TableRow>
+
+            <TextView
+                android:layout_column="1"
+                android:padding="8dp"
+                android:text="Medicamento"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_column="2"
+                android:padding="8dp"
+                android:text="Cantidad"
+                android:textStyle="bold" />
+
+            <!-- Add more header columns as needed -->
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
